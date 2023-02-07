@@ -66,21 +66,21 @@ def gen_wav(fpath_wav_out):
 
 	# these parameters will need updating!
 	#  you may also wish to add more parameters
-	total_num_samples = 32000
+	total_num_samples = 32000 # song duration?
 	
 	# allocate list of zeros to store an empty signal
 	xlist = [0] * total_num_samples
 
 	# setup one note
 	#  this implementation does not include harmonics or a decay
-	w1 = 2 * math.pi * 440 / sample_rate_hz
+	w1 = 2 * math.pi * 261.63 / sample_rate_hz
 	amp = 10000
 	
 	n_start = 8000
 	n_durr = 5* 912 # 5* sigma gives us beat duration. AKA duration of 1 quarter note.
 	
 	add_note(xlist,amp,w1,n_start,n_durr)
-	
+	add_note(xlist, amp, w1, n_start, n_durr)
 	
 	# students - well done!
 	###############################################################
@@ -120,7 +120,7 @@ def main():
 		print('Current version: ')
 		print(sys.version)
 		return False
-		
+
 	# grab file names
 	# fpath_wav_out = sys.argv[1]
 	fpath_wav_out = 'music_synth.wav'
