@@ -13,7 +13,6 @@ import math
 from cpe367_wav import cpe367_wav
 
 
-# testing push pull - alfred
 
 ############################################
 ############################################
@@ -78,7 +77,7 @@ def gen_wav(fpath_wav_out):
 	amp = 10000
 	
 	n_start = 8000
-	n_durr = 4000
+	n_durr = 5* 912 # 5* sigma gives us beat duration. AKA duration of 1 quarter note.
 	
 	add_note(xlist,amp,w1,n_start,n_durr)
 	
